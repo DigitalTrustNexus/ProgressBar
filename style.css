@@ -1,0 +1,96 @@
+.location {background-color: #ffffff; margin-left: 20px;}
+.box1 {
+  float: left;
+  width: 13%;
+  height: auto;
+  margin: 0;
+  text-align: cneter;
+}
+
+.box3 {
+  float: left;
+  width: 100%;
+  display: none;
+}
+
+.box2 {
+  width: 100%;
+  heigh: 100%;
+  float: left;
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
+#ddg1status {
+  margin-top: 15px;
+}
+
+#cvn1status {
+  margin-top: 10px;
+}
+
+#cvn2status {
+  margin-top: 25px;
+}
+
+#ssn1status {
+  margin-top: 15px;
+}
+
+#ddgbar1 {
+  margin-top: -75px;
+}
+
+#cvnbar1 {
+  margin-top: -60px;
+}
+
+#cvnbar2 {
+  margin-top: -140px;
+}
+
+#ssnbar1 {
+  margin-top: -75px;
+}
+
+#ddgprinter1 {
+  margin-top: 25px;
+}
+
+#cvnprinter1 {
+  margin-top: 10px;
+}
+
+#cvnprinter2 {
+  margin-top: 20px;
+}
+
+#ssnprinter1 {
+  margin-top: 25px;
+}
+
+.box4 {
+  width: 70%;
+  float: left;
+  margin-left: 0px;
+  display: flex;
+}
+
+.box5 {
+  width: 10%;
+  height: 10%;
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.ldBar-label2 {
+    color: red;
+    font-family: tahoma;
+    font-size: 0.9em;
+    font-weight: 90
+    margin: 0;
+}
+
