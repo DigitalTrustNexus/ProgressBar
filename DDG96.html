@@ -1,0 +1,27 @@
+<HR align="left" width="100%">
+<div class="location">
+   <div class="box1">
+     <BR> <img src="images/ddg-96.jpg" width="100%" style="vertical-align: top; margin-top: 15px"> <br> <br>
+     <center> DDG-96 </center><br>
+   </div>
+   <div class="box4">
+       <div class="box5a">
+         <img id="ddgprinter1" src="images/am1.jpg" width="150%">
+          <center style="font-family: monospace;"> Cosine AM1 </center>
+       </div>
+       <div class="box2a">
+         <center id="ddg1status"> Current Status: Free </center>
+            <div id="ddgbar1" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+       </div>
+   </div>
+   <div class="box3">
+      <center> Current Status: Printing </center>
+   </div>
+</div>
+
+<script>
+var ddgbar1 = new ldBar("#ddgbar1");
+var ddg1status = document.getElementById('ddg1status');
+ddgbar1.set(0);
+</script>
+

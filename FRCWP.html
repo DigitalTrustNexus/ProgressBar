@@ -1,0 +1,26 @@
+<HR align="left" width="100%">
+<div class="location">
+   <div class="box1">
+     <BR> <img src="images/FRCWP.png" width="70%" style="vertical-align: top; horizontal-align: center; margin-top: 15px; margin-left: 35px"> <br> <br>
+     <center> FRCWP </center><br>
+   </div>
+   <div class="box4">
+       <div class="box5a">
+         <img id="frcwpprinter1" src="images/am1.jpg" width="150%">
+          <left style="font-family: monospace; margin-left: 32px"> Cosine AM1 </left>
+       </div>
+       <div class="box2a">
+         <center id="frcwp1status"> Current Status: Free </center>
+            <div id="frcwpbar1" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+       </div>
+   </div>
+   <div class="box3">
+      <center> Current Status: Printing </center>
+   </div>
+</div>
+
+<script>
+var frcwpbar1 = new ldBar("#frcwpbar1");
+var frcwp1status = document.getElementById('frcwp1status');
+var frcwpbar1.set(0);
+</script>

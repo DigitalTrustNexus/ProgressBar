@@ -1,0 +1,37 @@
+<HR align="left" width="100%">
+<div class="location">
+   <div class="box1b">
+     <BR> <img src="images/cvn-77.jpg" width="100%" style="vertical-align: top; margin-top: 140px"> <br> <br>
+     <center> CVN-77 </center><br>
+   </div>
+   <div class="box4">
+     <div class="box5a">
+         <img id="cvnprinter1" src="images/am1.jpg" width="150%">
+         <center style="font-family: monospace;">Cosine AM1</center>
+     </div>
+     <div class="box2a">
+       <center id="cvn1status"> Current Status: Free </center>
+       <div id="cvnbar1" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+   <div class="box4a"> <br></div>
+   <div class="box4">
+     <div class="box5">
+         <center><img id="cvnprinter2" src="images/atlas.png" width="100%"> </center>
+         <center style="font-family: monospace;"> GE Atlas </center>
+     </div>
+     <div class="box2">
+       <br><center id="cvn2status"> Current Status: Free </center>
+       <div id="cvnbar2" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+</div>
+
+<script>
+var cvnbar1 = new ldBar("#cvnbar1");
+var cvnbar2 = new ldBar("#cvnbar2");
+var cvn1status = document.getElementById('cvn1status');
+var cvn2status = document.getElementById('cvn2status');
+cvnbar1.set(0);
+cvnbar2.set(0);
+</script>

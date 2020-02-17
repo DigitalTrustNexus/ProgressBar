@@ -1,0 +1,56 @@
+<HR align="left" width="100%">
+
+<style type="text/css">
+#mlg3bar1 {
+  margin-top: -75px;
+}
+#mlg3bar2 {
+  margin-top: -75px;
+}
+
+#mlg31status {
+  margin-top: 15px;
+}
+
+#mlg32status {
+  margin-top: 15px;
+}
+
+</style>
+
+<div class="location">
+   <div class="box1b">
+     <BR> <img src="images/3d_MLG_logo_2013.png" width="70%" style="vertical-align: top; margin-top: 130px; margin-left: 35px"> <br> <br>
+     <center> <font size=2"> 3rd Marine Logistics Group <br> Camp Kinser, Okinawa, Japan </font> </center><br>
+   </div>
+   <div class="box4">
+     <div class="box5a">
+         <img src="images/am1.jpg" width="150%">
+         <left style="font-family: monospace; margin-left: 20px; font-size: 10"> Cosine AM1 </left>
+     </div>
+     <div class="box2a">
+       <center id="mlg31status"> Current Status: Free </center>
+       <div id="mlg3bar1" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+   <div class="box4a"> <br></div>
+   <div class="box4">
+     <div class="box5">
+         <center><img src="images/atlas.png" width="100%"> </center>
+         <left style="font-family: monospace; margin-left: 12px"> GE Atlas </left>
+     </div>
+     <div class="box2">
+       <br><center id="mlg32status"> Current Status: Free </center>
+       <div id="mlg3bar2" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+</div>
+
+<script>
+var mlg3bar1 = new ldBar("#mlg3bar1");
+var mlg3bar2 = new ldBar("#mlg3bar2");
+var mlg31status = document.getElementById('mlg31status');
+var mlg32status = document.getElementById('mlg32status');
+mlg3bar1.set(0);
+mlg3bar2.set(0);
+</script>

@@ -1,0 +1,37 @@
+<HR align="left" width="100%">
+<div class="location">
+   <div class="box1b">
+     <BR> <img src="images/mclb.jpg" width="70%" style="vertical-align: top; margin-top: 140px; margin-left: 35px"> <br> <br>
+     <center><font size=2"> Marine Corps Logistics Base Albany <br> Albany, GA </font></center><br>
+   </div>
+   <div class="box4">
+     <div class="box5a">
+         <img id="mclbprinter1" src="images/am1.jpg" width="150%">
+         <left style="font-family: monospace; margin-left: 20px; font-size:10"> Cosine AM1 </left>
+     </div>
+     <div class="box2a">
+       <center id="mclb1status"> Current Status: Free </center>
+       <div id="mclbbar1" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+   <div class="box4a"> <br></div>
+   <div class="box4">
+     <div class="box5">
+         <center><img id="mclb2printer2" src="images/atlas.png" width="100%"> </center>
+         <left style="font-family: monospace; margin-left: 12px"> GE Atlas </left>
+     </div>
+     <div class="box2">
+       <br><center id="mclb2status"> Current Status: Free </center>
+       <div id="mclbbar2" class="label-center" data-preset="line" data-img-size="200,10" style="width:100%;height:250%"></div>
+     </div>
+   </div>
+</div>
+
+<script>
+var mclbbar1 = new ldBar("#mclbbar1");
+var mclbbar2 = new ldBar("#mclbbar2");
+var mclb1status = document.getElementById('mclb1status');
+var mclb2status = document.getElementById('mclb2status');
+mclbbar1.set(0);
+mclbbar2.set(0);
+</script>
