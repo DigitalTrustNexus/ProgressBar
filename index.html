@@ -1,119 +1,31 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<link rel="stylesheet" type="text/css" href="loading-bar.css"/>
-<script type="text/javascript" src="loading-bar.js"></script>
-<script>
-var ddgvar1;
-var cvnbar1;
-var cvnbar2;
-var ssnbar1;
-var ddg1status;
-var cvn1status;
-var cvn2status;
-var ssn1status;
-</script>
+<link rel="stylesheet" type="text/css" href="libs/loading-bar.css"/>
+<script type="text/javascript" src="libs/loading-bar.js"></script>
+<script type="text/javascript" src="libs/include.js"></script>
 </head>
 
 <h2>
-<img src="dtn_logo.png" width="8%" style="vertical-align: middle;"> 
+<img src="images/dtn_logo.png" width="4%" style="vertical-align: middle;"> 
 Digital Trust Nexus - Printer Status
 </span>
 </h2>
 
-<HR align="left" width="100%">
-<div class="location">
-   <div class="box1">
-     <BR> <img src="ddg-96.jpg" width="100%" style="vertical-align: top; margin-top: 5px"> <br> <br>
-     <center> DDG-96 </center><br>
-   </div>
-   <div class="box4">
-       <div class="box5">
-         <img id="ddgprinter1" src="atlas.png" width="100%"> 
-       </div>
-       <div class="box2">
-         <center id="ddg1status"> Current Status: Free </center>
-            <div id="ddgbar1" class="label-center" data-preset="rainbow" data-img-size="200,10" style="width:100%;height:250%"></div>
-       </div>
-   </div>
-   <div class="box3">
-      <center> Current Status: Printing </center>
-   </div>
-</div>
-
-<HR align="left" width="100%">
-<div class="location">
-   <div class="box1">
-     <BR> <img src="cvn-77.jpg" width="100%" style="vertical-align: top; margin-top: 60px"> <br> <br>
-     <center> CVN-77 </center><br>
-   </div>
-   <div class="box4">
-     <div class="box5">
-         <img id="cvnprinter1" src="atlas.png" width="100%"> 
-     </div>
-     <div class="box2">
-       <center id="cvn1status"> Current Status: Free </center>
-       <div id="cvnbar1" class="label-center" data-preset="rainbow" data-img-size="200,10" style="width:100%;height:250%"></div>
-     </div>
-   </div>
-   <div class="box4">
-     <div class="box5">
-         <img id="cvnprinter2" src="3dprinter.jpg" width="135%"> 
-     </div>
-     <div class="box2">
-       <br><center id="cvn2status"> Current Status: Free </center>
-       <div id="cvnbar2" class="label-center" data-preset="rainbow" data-img-size="200,10" style="width:100%;height:250%"></div>
-     </div>
-   </div>
-</div>
-<br>
-<HR align="left" width="100%">
-<div class="location">
-   <div class="box1">
-     <BR> <img src="ssn-791.jpg" width="100%" style="vertical-align: top; margin-top: 10px;"> <br> <br>
-     <center> SSN-791 </center><br>
-   </div>
-   <div class="box4">
-       <div class="box5">
-         <img id="ssnprinter1" src="atlas.png" width="100%"> 
-       </div>
-       <div class="box2">
-         <center id="ssn1status"> Current Status: Free </center>
-            <div id="ssnbar1" class="label-center" data-preset="rainbow" data-img-size="200,10" style="width:100%;height:250%"></div>
-       </div>
-   </div>
+<div>
+   <script type="text/javascript" > include("./1stMLG.html"); </script>
+   <script type="text/javascript" > include("./MCLB.html"); </script>
+   <script type="text/javascript" > include("./3rdMLG.html"); </script>
+   <script type="text/javascript" > include("./FRCWP.html"); </script>
+   <script type="text/javascript" > include("./DDG96.html"); </script>
+   <script type="text/javascript" > include("./CVN77.html"); </script>
+   <script type="text/javascript" > include("./SSN791.html"); </script>
 </div>
 
 <script>
-  ddgbar1 = new ldBar("#ddgbar1");
-  cvnbar1 = new ldBar("#cvnbar1");
-  cvnbar2 = new ldBar("#cvnbar2");
-  ssnbar1 = new ldBar("#ssnbar1");
-
-  ddg1status = document.getElementById('ddg1status');
-  cvn1status = document.getElementById('cvn1status');
-  cvn2status = document.getElementById('cvn2status');
-  ssn1status = document.getElementById('ssn1status');
-
-  ddgbar1.set(0);
-  cvnbar1.set(0);
-  cvnbar2.set(0);
-  ssnbar1.set(0);
-  var value = 10;
-</script>
-
-<script>
-/*
-var timer = null;
-function aaa () {
-  console.log(value);
-  ddgbar1.set(value);
-  value = value + 10;
-}
-timer = setInterval(aaa(), 1000);
-*/
-
-var ws = new WebSocket('ws://localhost:8087');
+var value = 10;
+//var ws = new WebSocket('wss://ec2-18-191-226-161.us-east-2.compute.amazonaws.com:8087');
+var ws = new WebSocket('wss://www2.digitaltrustnexus.net:8087');
 
 ws.onopen = function () {
    console.log("open!");  
@@ -121,9 +33,11 @@ ws.onopen = function () {
 };
 
 // Log errors
+/*
 ws.onerror = function (error) {
   console.error('WebSocket Error ' + error);
 };
+*/
 
 // Log messages from the server
 ws.onmessage = function (e) {
@@ -133,6 +47,16 @@ ws.onmessage = function (e) {
       ddgbar1.set(parseInt(data.value, 10));
       ddg1status.innerHTML = "Current Status: " + data.msg;     
    }
+   if (data.location == "CVN-77") {
+      if (data.printer == "1") {
+         cvnbar1.set(parseInt(data.value, 10));
+         cvn1status.innerHTML = "Current Status: " + data.msg;     
+      } else {
+         cvnbar2.set(parseInt(data.value, 10));
+         cvn2status.innerHTML = "Current Status: " + data.msg;     
+      }
+   }
+/*
    if (data.location == "CVN-771") {
       cvnbar1.set(parseInt(data.value, 10));
       cvn1status.innerHTML = "Current Status: " + data.msg;     
@@ -141,12 +65,38 @@ ws.onmessage = function (e) {
       cvnbar2.set(parseInt(data.value, 10));
       cvn2status.innerHTML = "Current Status: " + data.msg;     
    }
+*/
    if (data.location == "SSN-791") {
       ssnbar1.set(parseInt(data.value, 10));
       ssn1status.innerHTML = "Current Status: " + data.msg;     
    }
+
+   if (data.location == "MLG-1") {
+      mlg1bar1.set(parseInt(data.value, 10));
+      mlg11status.innerHTML = "Current Status: " + data.msg;     
+   }
+
+   if (data.location == "MLG-3") {
+      if (data.printer == "1") {
+         mlg3bar1.set(parseInt(data.value, 10));
+         mlg31status.innerHTML = "Current Status: " + data.msg;     
+      } else {
+         mlg3bar2.set(parseInt(data.value, 10));
+         mlg32status.innerHTML = "Current Status: " + data.msg;     
+      }
+   }
+
+   if (data.location == "MCLB") {
+      if (data.printer == "1") {
+         mclbbar1.set(parseInt(data.value, 10));
+         mclb1status.innerHTML = "Current Status: " + data.msg;     
+      } else {
+         mclbbar2.set(parseInt(data.value, 10));
+         mclb2status.innerHTML = "Current Status: " + data.msg;     
+      }
+   }
+
 };
-
-
 </script>
+
 </html>

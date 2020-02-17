@@ -1,0 +1,24 @@
+{
+  "name": "progressbar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DigitalTrustNexus/ProgressBar.git"
+  },
+  "author": "Yoshifumi Nishida",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/DigitalTrustNexus/ProgressBar/issues"
+  },
+  "homepage": "https://github.com/DigitalTrustNexus/ProgressBar#readme",
+  "dependencies": {
+    "https": "^1.0.0",
+    "ws": "^7.2.1"
+  }
+}
